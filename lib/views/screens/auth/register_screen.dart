@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -67,7 +68,7 @@ class RegisterScreen extends StatelessWidget {
               // REGISTER BUTTON
               InkWell(
                 onTap: () {
-                  print('Button Pressed!');
+                  print('Pressed!');
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,
@@ -79,7 +80,11 @@ class RegisterScreen extends StatelessWidget {
                   child: const Center(
                     child: Text(
                       'Register',
-                      style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold, letterSpacing: 2),
+                      style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 2),
                     ),
                   ),
                 ),
@@ -89,8 +94,20 @@ class RegisterScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text('Already have an account?'),
-                  TextButton(onPressed: () {}, child: const Text('Log In'),),
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text('Log In'),
+                  ),
                 ],
+              ),
+
+              const SizedBox(height: 40,),
+
+              GestureDetector(
+                onTap: () {
+                  print('Pressed');
+                },
+                child: Image.asset('assets/images/google-signin.png', width: 250,),
               ),
             ],
           ),
