@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
@@ -20,36 +21,76 @@ class RegisterScreen extends StatelessWidget {
                   letterSpacing: 3,
                 ),
               ),
-        
+
               // NAME INPUT FIELD
               TextFormField(
                 decoration: const InputDecoration(
                   labelText: 'Name',
                   hintText: 'Enter Name',
-                  prefixIcon: Icon(Icons.person, color: Colors.pinkAccent,),
+                  prefixIcon: Icon(
+                    Icons.person,
+                    color: Colors.pinkAccent,
+                  ),
                 ),
               ),
-        
+
               const SizedBox(height: 12,),
-        
+
               // EMAIL INPUT FIELD
               TextFormField(
                 decoration: const InputDecoration(
                   labelText: 'Email',
                   hintText: 'Enter Email',
-                  prefixIcon: Icon(Icons.email, color: Colors.pinkAccent,),
+                  prefixIcon: Icon(
+                    Icons.email,
+                    color: Colors.pinkAccent,
+                  ),
                 ),
               ),
-        
+
               const SizedBox(height: 12,),
-        
+
               // PASSWORD INPUT FIELD
               TextFormField(
                 decoration: const InputDecoration(
                   labelText: 'Password',
                   hintText: 'Enter Password',
-                  prefixIcon: Icon(Icons.lock, color: Colors.pinkAccent,),
+                  prefixIcon: Icon(
+                    Icons.lock,
+                    color: Colors.pinkAccent,
+                  ),
                 ),
+              ),
+
+              const SizedBox(height: 12,),
+
+              // REGISTER BUTTON
+              InkWell(
+                onTap: () {
+                  print('Button Pressed!');
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 52,
+                  decoration: BoxDecoration(
+                    color: Colors.pinkAccent,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: const Center(
+                    child: Text(
+                      'Register',
+                      style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold, letterSpacing: 2),
+                    ),
+                  ),
+                ),
+              ),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text('Already have an account?'),
+                  TextButton(onPressed: () {}, child: const Text('Log In'),),
+                ],
               ),
             ],
           ),
