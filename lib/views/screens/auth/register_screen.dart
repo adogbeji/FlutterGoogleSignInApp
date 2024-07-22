@@ -1,9 +1,17 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
+import 'package:google_signin/controllers/auth_service.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
+
+  authenticateWithGoogle(context) async {
+    try {
+      await authService.signInWithGoogle();
+    } catch (e) {
+      print('Error occured!');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -105,7 +113,14 @@ class RegisterScreen extends StatelessWidget {
 
               GestureDetector(
                 onTap: () {
-                  print('Pressed');
+                  // authenticateWithGoogle(context) async {
+                  //   try {
+                  //     await authService.signInWithGoogle();
+                  //   } catch (e) {
+                  //     print('Error occured!');
+                  //   }
+                  // }
+                  authenticateWithGoogle(context);
                 },
                 child: Image.asset('assets/images/google-signin.png', width: 250,),
               ),
