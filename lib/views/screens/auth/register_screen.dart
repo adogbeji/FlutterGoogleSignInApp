@@ -7,7 +7,7 @@ class RegisterScreen extends StatelessWidget {
 
   authenticateWithGoogle(context) async {
     try {
-      await authService.signInWithGoogle();
+      await AuthService.signInWithGoogle();
     } catch (e) {
       print('Error occured!');
     }

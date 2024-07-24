@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-class authService {
+class AuthService {
 
   static Future<UserCredential> signInWithGoogle() async {
 
